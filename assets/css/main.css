@@ -15,3 +15,9 @@ main section {
     margin-left: 200px;
     max-width: 500px;
 }
+
+.estrutura {
+    margin-top: 800px;
+    width: 1400px;
+    align-items: center;
+}
