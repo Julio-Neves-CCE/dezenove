@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-image: url('../img/fundo_sistema.png');
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header img {
+    height: 100px; /* Ajuste o tamanho da imagem conforme necessário */
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    list-style: none; /* Remove os marcadores da lista */
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Ocupará toda a largura do cabeçalho */
+}
+
+header ul li:first-child {
+    margin-left: auto; /* Garante espaço suficiente após a imagem */
+   
+}
+
+header ul li:last-child {
+    margin-left: auto; /* Empurra o último link para a direita */
+}
+
+header ul li {
+    margin: 0 15px; /* Espaçamento entre os links */
+}
+
+header ul li a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: #fff; /* Cor do texto dos links */
+    font-size: 1.5em; /* Tamanho do texto */
+    font-weight: 400;
+
+}
+
+header ul li a:hover {
+    color: black;
+    padding: 10px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    transition: 0.8s;
+    border-radius: 7px;
+}
+
+
