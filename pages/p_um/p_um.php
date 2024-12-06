@@ -25,6 +25,7 @@
                <li><a href="cad_simples.php">Cadastro Simples</a></li>
                <li><a href="#">Cadastro Completo</a></li>
                <li><a href="#">Altera Cadastro</a></li>
+               <li><a href="nivel_acesso.php">Nível de Acesso</a></li>
                <li><a href="#">Efetivo</a></li>
               <a href="../sistema.php" id="back"><img src="../../assets/img/icons8-rewind-button-round-48.png" alt=""></a>
                </ul>
