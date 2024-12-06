@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../assets/css/header.css">
+   
    
     <link rel="stylesheet" href="../assets/css/login.css">
     <link rel="shortcut icon" href="../assets/img/icons8-estrela-48.png" type="image/x-icon">
@@ -13,21 +13,15 @@
    
 </head>
 <body>
-    <header>
-        <img src="../assets/img/brasao.png" alt="Brasão">
-        <ul>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </header>
+
     <main>
         <!-- Tela de Login -->
-        <h2>Solicitar Acesso</h2>
+       
         <fieldset>
             <form action="#" method="POST">
                 <div class="input-group">
-                    <label for="username">Email</label>
-                    <input type="email" id="username" name="username" placeholder="Digite seu email" required>
+                    <label for="re">Digite o RE:</label>
+                    <input type="re" id="re" name="re" placeholder="000.000-0" required>
                 </div>
                 <div class="input-group">
                     <label for="password">Senha</label>
@@ -43,5 +37,6 @@
         </fieldset>
        
     </main>
+    <script src="../assets/js/formatRE.js"></script>
 </body>
 </html>

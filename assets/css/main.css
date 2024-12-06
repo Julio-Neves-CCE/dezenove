@@ -21,3 +21,25 @@ main section {
     width: 1400px;
     align-items: center;
 }
+
+main ul {
+    list-style: none;
+}
+
+main li {
+    padding: 10px;
+}
+main a {
+    color: #fff;
+    text-decoration: none;
+    
+}
+
+main ul li a:hover {
+    color: black;
+    padding: 10px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    transition: 0.8s;
+    border-radius: 7px;
+}

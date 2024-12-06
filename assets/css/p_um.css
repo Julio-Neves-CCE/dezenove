@@ -4,8 +4,14 @@ body {
     padding: 0;
     margin: 0;
     font-family: "Poppins", sans-serif;
-    background-image: url('../img/fundo_sistema.png');
+    background-image: url('../img/p_um.webp');
+    background-size: cover;
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+    background-position: center; /* Centraliza a imagem no viewport */
+    height: 100vh; /* Garante que o body ocupe toda a altura visível */
 }
+
+
 header {
     display: flex;
     align-items: center;
