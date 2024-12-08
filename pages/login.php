@@ -18,7 +18,7 @@
         <!-- Tela de Login -->
        
         <fieldset>
-            <form action="#" method="POST">
+            <form action="../assets/conexao/confirma_login.php" method="POST">
                 <div class="input-group">
                     <label for="re">Digite o RE:</label>
                     <input type="re" id="re" name="re" placeholder="000.000-0" required>

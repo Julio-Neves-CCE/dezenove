@@ -1,3 +1,19 @@
+<?php
+session_start(); // Inicia a sessão
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header("Location: login.php"); // Redireciona para a página de login
+    exit;
+}
+
+// Verifica se o nível de acesso é permitido
+$allowed_access_levels = ['admin', 'gerente', 'usuario', 'convidado'];
+if (!in_array($_SESSION['access_level'], $allowed_access_levels)) {
+    echo "Você não tem permissão para acessar esta página.";
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,11 +38,8 @@
     <main>
         <section>
            <ul>
-               <li><a href="cad_simples.php">Cadastro Simples</a></li>
-               <li><a href="#">Cadastro Completo</a></li>
-               <li><a href="#">Altera Cadastro</a></li>
-               <li><a href="nivel_acesso.php">Nível de Acesso</a></li>
-               <li><a href="#">Efetivo</a></li>
+               <li><a href="efetivo.php">Efetivo</a></li>
+               <li><a href="escala.php">Escala</a></li>
               <a href="../sistema.php" id="back"><img src="../../assets/img/icons8-rewind-button-round-48.png" alt=""></a>
                </ul>
                <img src="" alt="">

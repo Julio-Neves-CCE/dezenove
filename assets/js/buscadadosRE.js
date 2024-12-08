@@ -1,5 +1,5 @@
 document.getElementById('re').addEventListener('blur', function () {
-    const re = this.value.trim();
+    let re = this.value.trim();
 
     if (re === '') {
         alert('O campo RE não pode estar vazio.');
@@ -13,27 +13,38 @@ document.getElementById('re').addEventListener('blur', function () {
         return;
     }
 
-    // Fazendo a requisição AJAX
-    fetch('../../assets/conexao/busca_dados_re.php', {
+    // Log para verificar o valor de RE antes da requisição
+    console.log('Valor de RE enviado para busca:', re);
+
+
+    // Ajuste do caminho da requisição
+    fetch('/dezenove/assets/conexao/busca_dados_re.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: `re=${encodeURIComponent(re)}`
     })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                document.getElementById('posto_graduacao').value = data.posto_graduacao;
-                document.getElementById('nome_guerra').value = data.nome_guerra;
-                document.getElementById('opm').value = data.opm;
-            } else {
-                alert(data.message || 'RE não encontrado.');
-                document.getElementById('posto_graduacao').value = '';
-                document.getElementById('nome_guerra').value = '';
-                document.getElementById('opm').value = '';
-            }
-        })
-        .catch(error => {
-            console.error('Erro ao buscar os dados:', error);
-            alert('Erro ao processar a solicitação.');
-        });
+    .then(response => {
+        console.log('Resposta do servidor:', response); // Verifique se a resposta é OK
+        if (!response.ok) {
+            throw new Error('Erro de rede');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Dados recebidos:', data); // Verifique os dados recebidos
+        if (data.success) {
+            document.getElementById('posto_graduacao').value = data.posto_graduacao;
+            document.getElementById('nome_guerra').value = data.nome_guerra;
+            document.getElementById('opm').value = data.opm;
+        } else {
+            alert(data.message || 'RE não encontrado.');
+            document.getElementById('posto_graduacao').value = '';
+            document.getElementById('nome_guerra').value = '';
+            document.getElementById('opm').value = '';
+        }
+    })
+    .catch(error => {
+        console.error('Erro ao buscar os dados:', error); // Log detalhado do erro
+        alert('Erro ao processar a solicitação.');
+    });
 });

@@ -1,3 +1,19 @@
+<?php
+session_start(); // Inicia a sessão
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header("Location: login.php"); // Redireciona para a página de login
+    exit;
+}
+
+// Verifica se o nível de acesso é permitido
+$allowed_access_levels = ['admin', 'gerente', 'usuario'];
+if (!in_array($_SESSION['access_level'], $allowed_access_levels)) {
+    echo "Você não tem permissão para acessar esta página.";
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +42,7 @@
             <ul>
                 <li><a href="#">Cadastro Simples</a></li>
 
-                <a href="p_um.php" id="back"><img src="../../assets/img/icons8-rewind-button-round-48.png" alt=""></a>
+                <a href="efetivo.php" id="back"><img src="../../assets/img/icons8-rewind-button-round-48.png" alt=""></a>
             </ul>
             <img src="" alt="">
         </section>
@@ -61,7 +77,9 @@
                     <option value="EM">EM</option>
                     <option value="1ª Cia">1ª Cia</option>
                     <option value="2ª Cia">2ª Cia</option>
-                    <option value="3ª Cia">3ª Cia</option>
+                    <option value="3ª Cia CM">3ª Cia CM</option>
+                    <option value="3ª Cia AN">3ª Cia AN</option>
+                    <option value="3ª Cia EC">3ª Cia EC</option>
                     <option value="FT">Força Tática</option>
                 </select><br>
                 

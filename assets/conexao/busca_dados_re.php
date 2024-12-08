@@ -3,9 +3,9 @@ require_once 'conexao.php';
 header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['re'])) {
-    $re = trim($_POST['re']);
+    $re = trim($_POST['re']); // Remove espaços extras do valor enviado
 
-    // Validação do formato do RE
+    // Validação do formato do RE (mantemos a validação original)
     if (!preg_match('/^\d{3}\.\d{3}-\d{1}$/', $re)) {
         echo json_encode([
             'success' => false,
@@ -15,8 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['re'])) {
     }
 
     try {
-        // Consulta no banco de dados
-        $stmt = $pdo->prepare("SELECT posto_graduacao, nome_guerra, opm FROM usuarios_simples WHERE re = :re");
+        // A consulta agora usa o valor de $re já normalizado, sem a necessidade de REPLACE no SQL
+        $stmt = $pdo->prepare("SELECT posto_graduacao, nome_guerra, opm FROM usuarios_simples WHERE trim(re) = :re");
         $stmt->bindParam(':re', $re, PDO::PARAM_STR);
         $stmt->execute();
 
@@ -46,4 +46,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['re'])) {
         'message' => 'Método inválido ou campo RE ausente.'
     ]);
 }
-
