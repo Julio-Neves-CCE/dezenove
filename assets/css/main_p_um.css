@@ -116,3 +116,21 @@ input[name="cadastrar"]:hover {
     color: black;
     cursor: pointer;
 }
+
+#resumo {
+    width: 500px;
+    height: 80px;
+}
+
+.campo-container {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os campos */
+}
+
+label {
+    margin-right: 5px;
+}
+
+#prazo {
+    width: 50px;
+}

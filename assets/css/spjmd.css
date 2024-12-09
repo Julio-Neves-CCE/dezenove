@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-image: url('../img/spjmd.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+    background-position: center; /* Centraliza a imagem no viewport */
+    height: 100vh; /* Garante que o body ocupe toda a altura visível */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ajusta os itens para os lados */
+    padding: 10px 20px;
+    position: relative; /* Remove influência sobre outros elementos */
+    z-index: 10; /* Garante que ele fique visível no topo */
+    width: 100%; /* Ocupa a largura completa */
+    background: rgba(0, 0, 0, 0.7); /* Fundo semitransparente, se necessário */
+    box-sizing: border-box; /* Garante que o padding não ultrapasse a largura */
+}
+
+header img {
+    height: 100px;
+    margin: 0; /* Remove margens que podem desalinhar */
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Posiciona os links corretamente */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Faz a lista ocupar o espaço disponível */
+}
+
+
+header ul li:first-child {
+    margin-left: auto; /* Garante espaço suficiente após a imagem */
+   
+}
+
+header ul li:last-child {
+    margin-left: auto; /* Empurra o último link para a direita */
+}
+
+header ul li {
+    margin: 0 15px; /* Espaçamento entre os links */
+}
+
+header ul li a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: #fff; /* Cor do texto dos links */
+    font-size: 1.5em; /* Tamanho do texto */
+    font-weight: 400;
+
+}
+
+header ul li a:hover {
+    color: black;
+    padding: 10px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    transition: 0.8s;
+    border-radius: 7px;
+}

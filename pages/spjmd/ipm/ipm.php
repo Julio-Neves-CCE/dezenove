@@ -14,21 +14,20 @@ if (!in_array($_SESSION['access_level'], $allowed_access_levels)) {
     exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema</title>
-    <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="shortcut icon" href="../assets/img/icons8-estrela-48.png" type="image/x-icon">
+    <title>IPM</title>
+    <link rel="stylesheet" href="../../../assets/css/spjmd.css">
+    <link rel="stylesheet" href="../../../assets/css/main_p_um.css">
+    <link rel="shortcut icon" href="../../../assets/img/icons8-estrela-48.png" type="image/x-icon">
 
 </head>
 <body>
     <header>
-        <img src="../assets/img/brasao.png" alt="">
+        <img src="../../../assets/img/brasao.png" alt="">
         <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#" id="estrutura-link">Estrutura</a></li>
@@ -39,11 +38,10 @@ if (!in_array($_SESSION['access_level'], $allowed_access_levels)) {
     <main>
         <section>
            <ul>
-               <li><a href="p_um/p_um.php">Seção de Pessoal</a></li>
-               <li><a href="#">Agência de Área</a></li>
-               <li><a href="#">Seção Operacional</a></li>
-               <li><a href="#">Seção de Logístiva</a></li>
-               <li><a href="spjmd/spjmd.php">SPJMD</a></li>
+               <li><a href="novo_ipm.php">Novo IPM</a></li>
+               <li><a href="instrucao.php">Em Instrução</a></li>
+               
+              <a href="../spjmd.php" id="back"><img src="../../../assets/img/icons8-rewind-button-round-48.png" alt=""></a>
                </ul>
                <img src="" alt="">
         </section>

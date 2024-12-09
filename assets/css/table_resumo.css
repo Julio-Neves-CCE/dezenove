@@ -1,0 +1,71 @@
+/* Estilos gerais da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Cor de fundo clara */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho da tabela */
+th {
+    background-color: #007bff; /* Cor de fundo do cabeçalho */
+    color: #ffffff; /* Cor do texto */
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Estilo das células da tabela */
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* Linha sutil separando as células */
+    white-space: nowrap;
+}
+
+/* Estilo para linhas alternadas da tabela */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo do texto da célula */
+td, th {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Cor de fundo das células de contagem de prazo */
+td[style*="background-color: green;"] {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+td[style*="background-color: yellow;"] {
+    background-color: #ffc107; /* Amarelo */
+    color: black;
+}
+
+td[style*="background-color: red;"] {
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+}
+
+td[style*="background-color: gray;"] {
+    background-color: #6c757d; /* Cinza para vencido */
+    color: white;
+}
+
+/* Adicionar uma borda ao redor da tabela */
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+/* Estilo do texto quando não há registros */
+tr td[colspan='6'] {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+}
